@@ -19,13 +19,12 @@ with open(os.path.join(os.getcwd(), 'config.json'), "r") as config_file:
 
 model = I3DR50(num_classes=1, init_model='resnet')
 
-# device = torch.device('cpu')
-device = [torch.device('cuda', 0), torch.device('cpu', 1)]
-device[0]
-
 device = "cuda"
 if not torch.cuda.is_available():
     device = "cpu"
+
+else:
+    model = model.to(torch.device("cuda"))
 
 print("PyTorch version: {} | Device: {}".format(torch.__version__, device))
 print("Train loader: num_batches={} | num_samples={}".format(len(loaders["train"]), len(loaders["train"].sampler)))
@@ -61,7 +60,7 @@ val_evaluator = create_supervised_evaluator(model, metrics=metrics, device=devic
 random_indices = np.random.permutation(np.arange(len(train_dataset)))[:len(val_dataset)]
 train_subset = Subset(train_dataset, indices=random_indices)
 
-train_eval_loader = torch.utils.data.DataLoader(train_subset, batch_size=2, shuffle=True, num_workers=4, 
+train_eval_loader = torch.utils.data.DataLoader(train_subset, batch_size=64, shuffle=True, num_workers=4, 
                                drop_last=True, pin_memory="cuda" in device)
 
 @trainer.on(Events.EPOCH_COMPLETED)
@@ -101,27 +100,27 @@ def score_function(engine):
     return val_avg_mse
 
 # Training checkpointing
-best_model_saver = ModelCheckpoint(os.path.join(os.getcwd(), config["best_models_path"]),  # folder where to save the best model(s)
-                                   filename_prefix="model",  # filename prefix -> {filename_prefix}_{name}_{step_number}_{score_name}={abs(score_function_result)}.pth
-                                   score_name="val_mse",  
-                                   score_function=score_function,
-                                   n_saved=3,
-                                   atomic=True,  # objects are saved to a temporary file and then moved to final destination, so that files are guaranteed to not be damaged
-                                   save_as_state_dict=True,  # Save object as state_dict
-                                   create_dir=True)
+# best_model_saver = ModelCheckpoint(os.path.join(os.getcwd(), config["best_models_path"]),  # folder where to save the best model(s)
+#                                    filename_prefix="model",  # filename prefix -> {filename_prefix}_{name}_{step_number}_{score_name}={abs(score_function_result)}.pth
+#                                    score_name="val_mse",  
+#                                    score_function=score_function,
+#                                    n_saved=3,
+#                                    atomic=True,  # objects are saved to a temporary file and then moved to final destination, so that files are guaranteed to not be damaged
+#                                    save_as_state_dict=True,  # Save object as state_dict
+#                                    create_dir=True)
 
-val_evaluator.add_event_handler(Events.COMPLETED, best_model_saver, {"best_model": model})
+# val_evaluator.add_event_handler(Events.COMPLETED, best_model_saver, {"best_model": model})
 
-training_saver = ModelCheckpoint(os.path.join(os.getcwd(), config["checkpoint_path"]),
-                                 filename_prefix="checkpoint",
-                                 save_interval=None,
-                                 n_saved=3,
-                                 atomic=True,
-                                 save_as_state_dict=True,
-                                 create_dir=True)
+# training_saver = ModelCheckpoint(os.path.join(os.getcwd(), config["checkpoint_path"]),
+#                                  filename_prefix="checkpoint",
+#                                  save_interval=None,
+#                                  n_saved=3,
+#                                  atomic=True,
+#                                  save_as_state_dict=True,
+#                                  create_dir=True)
 
-to_save = {"trainer": trainer, "model": model, "optimizer": optimizer} # "lr_scheduler": lr_scheduler
-trainer.add_event_handler(Events.ITERATION_COMPLETED, training_saver, to_save) 
+# to_save = {"trainer": trainer, "model": model, "optimizer": optimizer} # "lr_scheduler": lr_scheduler
+# trainer.add_event_handler(Events.ITERATION_COMPLETED, training_saver, to_save) 
 
 # Early Stopping 
 early_stopping = EarlyStopping(patience=10, score_function=score_function, trainer=trainer)

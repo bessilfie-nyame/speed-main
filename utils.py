@@ -104,8 +104,8 @@ if __name__ == '__main__':
     # write_avg_speed(train_path, train_label, normalize=False)
     # write_avg_speed(val_path, val_label, normalize=False)
 
-    # create_annotations(train_path, train_annotations, normalize=True)
-    create_annotations(val_path, val_annotations, normalize=True)
+    create_annotations(train_path, train_annotations, normalize=False)
+    create_annotations(val_path, val_annotations, normalize=False)
     
   
        

@@ -147,7 +147,7 @@ class I3DResNet(nn.Module):
         # self.avgpool = nn.AvgPool3d(kernel_size=(last_duration, last_h, last_w), stride=1)
 
         # self.dropout = nn.Dropout(args.dropout)
-        self.dropout = nn.Dropout(p=0.2)
+        # self.dropout = nn.Dropout(p=0.2)
 
 
         # self.fc = nn.Conv3d(512*block.expansion, num_classes, kernel_size=1, stride=1)
@@ -213,7 +213,7 @@ class I3DResNet(nn.Module):
 
         x = self.avgpool(x)  # (bs, 2048, 1, 1, 1)
         
-        x = self.dropout(x)      
+        # x = self.dropout(x)      
         x = self.conv1x1_1(x)
         x = x.squeeze(2).squeeze(2).squeeze(2)
         return x
