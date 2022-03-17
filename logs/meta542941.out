@@ -1,0 +1,189 @@
+Showing some episodes from the Dataset
+======================================
+ 
+Train Dataset... 
+ 
+Episode: 0
+                                     cameraFront   canSpeed  chapter
+0     Appenzell_3/go_pro_4/image/18/img00001.jpg  19.424748        0
+1     Appenzell_3/go_pro_4/image/18/img00002.jpg  19.465483        0
+2     Appenzell_3/go_pro_4/image/18/img00003.jpg  19.497675        0
+3     Appenzell_3/go_pro_4/image/18/img00004.jpg  19.536511        0
+4     Appenzell_3/go_pro_4/image/18/img00005.jpg  19.585920        0
+...                                          ...        ...      ...
+2992  Appenzell_3/go_pro_4/image/18/img02993.jpg  13.125572        0
+2993  Appenzell_3/go_pro_4/image/18/img02994.jpg  13.120658        0
+2994  Appenzell_3/go_pro_4/image/18/img02995.jpg  13.110072        0
+2995  Appenzell_3/go_pro_4/image/18/img02996.jpg  13.080049        0
+2996  Appenzell_3/go_pro_4/image/18/img02997.jpg  13.065506        0
+
+[2997 rows x 3 columns]
+Episode: 1
+                              cameraFront   canSpeed  chapter
+2997  Bern/go_pro_4/image/17/img00001.jpg  12.578996        1
+2998  Bern/go_pro_4/image/17/img00002.jpg  12.612083        1
+2999  Bern/go_pro_4/image/17/img00003.jpg  12.645309        1
+3000  Bern/go_pro_4/image/17/img00004.jpg  12.675897        1
+3001  Bern/go_pro_4/image/17/img00005.jpg  12.727120        1
+...                                   ...        ...      ...
+5989  Bern/go_pro_4/image/17/img02993.jpg   5.158137        1
+5990  Bern/go_pro_4/image/17/img02994.jpg   5.015700        1
+5991  Bern/go_pro_4/image/17/img02995.jpg   4.870835        1
+5992  Bern/go_pro_4/image/17/img02996.jpg   4.753228        1
+5993  Bern/go_pro_4/image/17/img02997.jpg   4.654267        1
+
+[2997 rows x 3 columns]
+Episode: 2
+                                 cameraFront   canSpeed  chapter
+5994  Zurich_8/go_pro_4/image/9/img00001.jpg  11.583713        2
+5995  Zurich_8/go_pro_4/image/9/img00002.jpg  11.506047        2
+5996  Zurich_8/go_pro_4/image/9/img00003.jpg  11.477957        2
+5997  Zurich_8/go_pro_4/image/9/img00004.jpg  11.392868        2
+5998  Zurich_8/go_pro_4/image/9/img00005.jpg  11.351936        2
+...                                      ...        ...      ...
+8986  Zurich_8/go_pro_4/image/9/img02993.jpg  13.450477        2
+8987  Zurich_8/go_pro_4/image/9/img02994.jpg  13.475975        2
+8988  Zurich_8/go_pro_4/image/9/img02995.jpg  13.478930        2
+8989  Zurich_8/go_pro_4/image/9/img02996.jpg  13.466609        2
+8990  Zurich_8/go_pro_4/image/9/img02997.jpg  13.518096        2
+
+[2997 rows x 3 columns]
+Episode: 3
+                               cameraFront   canSpeed  chapter
+8991   Bern/go_pro_4/image/27/img00001.jpg  20.147312        3
+8992   Bern/go_pro_4/image/27/img00002.jpg  20.078149        3
+8993   Bern/go_pro_4/image/27/img00003.jpg  20.061806        3
+8994   Bern/go_pro_4/image/27/img00004.jpg  20.043851        3
+8995   Bern/go_pro_4/image/27/img00005.jpg  20.060881        3
+...                                    ...        ...      ...
+11983  Bern/go_pro_4/image/27/img02993.jpg  19.690250        3
+11984  Bern/go_pro_4/image/27/img02994.jpg  19.720289        3
+11985  Bern/go_pro_4/image/27/img02995.jpg  19.754348        3
+11986  Bern/go_pro_4/image/27/img02996.jpg  19.792916        3
+11987  Bern/go_pro_4/image/27/img02997.jpg  19.837241        3
+
+[2997 rows x 3 columns]
+Episode: 4
+                                   cameraFront   canSpeed  chapter
+11988  Zurich_6/go_pro_4/image/45/img00001.jpg  11.528248        4
+11989  Zurich_6/go_pro_4/image/45/img00002.jpg  11.587743        4
+11990  Zurich_6/go_pro_4/image/45/img00003.jpg  11.652286        4
+11991  Zurich_6/go_pro_4/image/45/img00004.jpg  11.715592        4
+11992  Zurich_6/go_pro_4/image/45/img00005.jpg  11.784490        4
+...                                        ...        ...      ...
+14980  Zurich_6/go_pro_4/image/45/img02993.jpg   0.000000        4
+14981  Zurich_6/go_pro_4/image/45/img02994.jpg   0.000000        4
+14982  Zurich_6/go_pro_4/image/45/img02995.jpg   0.000000        4
+14983  Zurich_6/go_pro_4/image/45/img02996.jpg   0.000000        4
+14984  Zurich_6/go_pro_4/image/45/img02997.jpg   0.000000        4
+
+[2997 rows x 3 columns]
+Episode: 5
+                                cameraFront   canSpeed  chapter
+14985  Flims/go_pro_4/image/20/img00001.jpg   8.076293        5
+14986  Flims/go_pro_4/image/20/img00002.jpg   8.097903        5
+14987  Flims/go_pro_4/image/20/img00003.jpg   8.102537        5
+14988  Flims/go_pro_4/image/20/img00004.jpg   8.109004        5
+14989  Flims/go_pro_4/image/20/img00005.jpg   8.126347        5
+...                                     ...        ...      ...
+17977  Flims/go_pro_4/image/20/img02993.jpg  21.470425        5
+17978  Flims/go_pro_4/image/20/img02994.jpg  21.486658        5
+17979  Flims/go_pro_4/image/20/img02995.jpg  21.508139        5
+17980  Flims/go_pro_4/image/20/img02996.jpg  21.533829        5
+17981  Flims/go_pro_4/image/20/img02997.jpg  21.550972        5
+
+[2997 rows x 3 columns]
+ 
+ 
+Validation Dataset... 
+ 
+Episode: 0
+                                  cameraFront  canSpeed  chapter
+0     Zurich_6/go_pro_4/image/25/img00001.jpg  0.000000        0
+1     Zurich_6/go_pro_4/image/25/img00002.jpg  0.000000        0
+2     Zurich_6/go_pro_4/image/25/img00003.jpg  0.000000        0
+3     Zurich_6/go_pro_4/image/25/img00004.jpg  0.000000        0
+4     Zurich_6/go_pro_4/image/25/img00005.jpg  0.000000        0
+...                                       ...       ...      ...
+2992  Zurich_6/go_pro_4/image/25/img02993.jpg  1.587447        0
+2993  Zurich_6/go_pro_4/image/25/img02994.jpg  1.709128        0
+2994  Zurich_6/go_pro_4/image/25/img02995.jpg  1.840130        0
+2995  Zurich_6/go_pro_4/image/25/img02996.jpg  1.984971        0
+2996  Zurich_6/go_pro_4/image/25/img02997.jpg  2.132515        0
+
+[2997 rows x 3 columns]
+Episode: 1
+                               cameraFront   canSpeed  chapter
+2997  Flims/go_pro_4/image/21/img00001.jpg  21.563639        1
+2998  Flims/go_pro_4/image/21/img00002.jpg  21.576516        1
+2999  Flims/go_pro_4/image/21/img00003.jpg  21.585014        1
+3000  Flims/go_pro_4/image/21/img00004.jpg  21.593356        1
+3001  Flims/go_pro_4/image/21/img00005.jpg  21.597889        1
+...                                    ...        ...      ...
+5989  Flims/go_pro_4/image/21/img02993.jpg  21.797584        1
+5990  Flims/go_pro_4/image/21/img02994.jpg  21.797584        1
+5991  Flims/go_pro_4/image/21/img02995.jpg  21.797584        1
+5992  Flims/go_pro_4/image/21/img02996.jpg  21.797584        1
+5993  Flims/go_pro_4/image/21/img02997.jpg  21.797584        1
+
+[2997 rows x 3 columns]
+Episode: 2
+                                    cameraFront   canSpeed  chapter
+5994  Laufenburg/go_pro_4/image/17/img00001.jpg   2.940088        2
+5995  Laufenburg/go_pro_4/image/17/img00002.jpg   2.944414        2
+5996  Laufenburg/go_pro_4/image/17/img00003.jpg   2.952905        2
+5997  Laufenburg/go_pro_4/image/17/img00004.jpg   2.990515        2
+5998  Laufenburg/go_pro_4/image/17/img00005.jpg   3.004881        2
+...                                         ...        ...      ...
+8986  Laufenburg/go_pro_4/image/17/img02993.jpg  24.921965        2
+8987  Laufenburg/go_pro_4/image/17/img02994.jpg  24.893033        2
+8988  Laufenburg/go_pro_4/image/17/img02995.jpg  24.858569        2
+8989  Laufenburg/go_pro_4/image/17/img02996.jpg  24.841944        2
+8990  Laufenburg/go_pro_4/image/17/img02997.jpg  24.820657        2
+
+[2997 rows x 3 columns]
+Episode: 3
+                                  cameraFront   canSpeed  chapter
+8991   Flims_2/go_pro_4/image/12/img00001.jpg  21.691466        3
+8992   Flims_2/go_pro_4/image/12/img00002.jpg  21.637706        3
+8993   Flims_2/go_pro_4/image/12/img00003.jpg  21.566425        3
+8994   Flims_2/go_pro_4/image/12/img00004.jpg  21.496553        3
+8995   Flims_2/go_pro_4/image/12/img00005.jpg  21.425932        3
+...                                       ...        ...      ...
+11983  Flims_2/go_pro_4/image/12/img02993.jpg  19.005123        3
+11984  Flims_2/go_pro_4/image/12/img02994.jpg  19.092897        3
+11985  Flims_2/go_pro_4/image/12/img02995.jpg  19.161123        3
+11986  Flims_2/go_pro_4/image/12/img02996.jpg  19.230666        3
+11987  Flims_2/go_pro_4/image/12/img02997.jpg  19.303456        3
+
+[2997 rows x 3 columns]
+Episode: 4
+                                      cameraFront   canSpeed  chapter
+11988  Appenzell_2/go_pro_4/image/35/img00001.jpg  30.491588        4
+11989  Appenzell_2/go_pro_4/image/35/img00002.jpg  30.423286        4
+11990  Appenzell_2/go_pro_4/image/35/img00003.jpg  30.331244        4
+11991  Appenzell_2/go_pro_4/image/35/img00004.jpg  30.259010        4
+11992  Appenzell_2/go_pro_4/image/35/img00005.jpg  30.197756        4
+...                                           ...        ...      ...
+14980  Appenzell_2/go_pro_4/image/35/img02993.jpg  27.490091        4
+14981  Appenzell_2/go_pro_4/image/35/img02994.jpg  27.481441        4
+14982  Appenzell_2/go_pro_4/image/35/img02995.jpg  27.494306        4
+14983  Appenzell_2/go_pro_4/image/35/img02996.jpg  27.507092        4
+14984  Appenzell_2/go_pro_4/image/35/img02997.jpg  27.536806        4
+
+[2997 rows x 3 columns]
+Episode: 5
+                               cameraFront   canSpeed  chapter
+14985  Bern/go_pro_4/image/24/img00001.jpg  13.903057        5
+14986  Bern/go_pro_4/image/24/img00002.jpg  13.902526        5
+14987  Bern/go_pro_4/image/24/img00003.jpg  13.944184        5
+14988  Bern/go_pro_4/image/24/img00004.jpg  13.974847        5
+14989  Bern/go_pro_4/image/24/img00005.jpg  13.980615        5
+...                                    ...        ...      ...
+17977  Bern/go_pro_4/image/24/img02993.jpg  14.283439        5
+17978  Bern/go_pro_4/image/24/img02994.jpg  14.274943        5
+17979  Bern/go_pro_4/image/24/img02995.jpg  14.245327        5
+17980  Bern/go_pro_4/image/24/img02996.jpg  14.270813        5
+17981  Bern/go_pro_4/image/24/img02997.jpg  14.283578        5
+
+[2997 rows x 3 columns]

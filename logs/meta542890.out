@@ -1,0 +1,47 @@
+Train Dataset
+                                  cameraRight  ... chapter
+0  Appenzell_3/go_pro_1/image/18/img00001.jpg  ...       0
+1  Appenzell_3/go_pro_1/image/18/img00002.jpg  ...       0
+2  Appenzell_3/go_pro_1/image/18/img00003.jpg  ...       0
+3  Appenzell_3/go_pro_1/image/18/img00004.jpg  ...       0
+4  Appenzell_3/go_pro_1/image/18/img00005.jpg  ...       0
+
+[5 rows x 34 columns]
+ 
+Index(['cameraRight', 'cameraFront', 'cameraRear', 'cameraLeft', 'here',
+       'tomtom', 'gpsLatitude', 'gpsLongitude', 'gpsAltitude', 'gpsPrecision',
+       'hereMmLatitude', 'hereMmLongitude', 'hereSpeedLimit',
+       'hereSpeedLimit_2', 'hereFreeFlowSpeed', 'hereSignal', 'hereYield',
+       'herePedestrian', 'hereIntersection', 'hereMmIntersection',
+       'hereSegmentExitHeading', 'hereSegmentEntryHeading',
+       'hereSegmentOthersHeading', 'hereCurvature', 'hereCurrentHeading',
+       'here1mHeading', 'here5mHeading', 'here10mHeading', 'here20mHeading',
+       'here50mHeading', 'hereTurnNumber', 'canSteering', 'canSpeed',
+       'chapter'],
+      dtype='object')
+Maximum Speed: 
+36.893229
+ 
+Validation Dataset
+                               cameraRight  ... chapter
+0  Zurich_6/go_pro_1/image/25/img00001.jpg  ...       0
+1  Zurich_6/go_pro_1/image/25/img00002.jpg  ...       0
+2  Zurich_6/go_pro_1/image/25/img00003.jpg  ...       0
+3  Zurich_6/go_pro_1/image/25/img00004.jpg  ...       0
+4  Zurich_6/go_pro_1/image/25/img00005.jpg  ...       0
+
+[5 rows x 34 columns]
+ 
+Index(['cameraRight', 'cameraFront', 'cameraRear', 'cameraLeft', 'here',
+       'tomtom', 'gpsLatitude', 'gpsLongitude', 'gpsAltitude', 'gpsPrecision',
+       'hereMmLatitude', 'hereMmLongitude', 'hereSpeedLimit',
+       'hereSpeedLimit_2', 'hereFreeFlowSpeed', 'hereSignal', 'hereYield',
+       'herePedestrian', 'hereIntersection', 'hereMmIntersection',
+       'hereSegmentExitHeading', 'hereSegmentEntryHeading',
+       'hereSegmentOthersHeading', 'hereCurvature', 'hereCurrentHeading',
+       'here1mHeading', 'here5mHeading', 'here10mHeading', 'here20mHeading',
+       'here50mHeading', 'hereTurnNumber', 'canSteering', 'canSpeed',
+       'chapter'],
+      dtype='object')
+Maximum Speed: 
+35.357548

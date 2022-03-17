@@ -1,0 +1,86 @@
+Train Dataset... 
+ 
+First Five Rows: 
+                                  cameraRight  ... chapter
+0  Appenzell_3/go_pro_1/image/18/img00001.jpg  ...       0
+1  Appenzell_3/go_pro_1/image/18/img00002.jpg  ...       0
+2  Appenzell_3/go_pro_1/image/18/img00003.jpg  ...       0
+3  Appenzell_3/go_pro_1/image/18/img00004.jpg  ...       0
+4  Appenzell_3/go_pro_1/image/18/img00005.jpg  ...       0
+
+[5 rows x 34 columns]
+ 
+All Columns: 
+Index(['cameraRight', 'cameraFront', 'cameraRear', 'cameraLeft', 'here',
+       'tomtom', 'gpsLatitude', 'gpsLongitude', 'gpsAltitude', 'gpsPrecision',
+       'hereMmLatitude', 'hereMmLongitude', 'hereSpeedLimit',
+       'hereSpeedLimit_2', 'hereFreeFlowSpeed', 'hereSignal', 'hereYield',
+       'herePedestrian', 'hereIntersection', 'hereMmIntersection',
+       'hereSegmentExitHeading', 'hereSegmentEntryHeading',
+       'hereSegmentOthersHeading', 'hereCurvature', 'hereCurrentHeading',
+       'here1mHeading', 'here5mHeading', 'here10mHeading', 'here20mHeading',
+       'here50mHeading', 'hereTurnNumber', 'canSteering', 'canSpeed',
+       'chapter'],
+      dtype='object')
+ 
+Interested Columns: 
+                                  cameraFront   canSpeed  chapter
+0  Appenzell_3/go_pro_4/image/18/img00001.jpg  19.424748        0
+1  Appenzell_3/go_pro_4/image/18/img00002.jpg  19.465483        0
+2  Appenzell_3/go_pro_4/image/18/img00003.jpg  19.497675        0
+3  Appenzell_3/go_pro_4/image/18/img00004.jpg  19.536511        0
+4  Appenzell_3/go_pro_4/image/18/img00005.jpg  19.585920        0
+ 
+cameraFront - paths to the images recorded by the front camera
+canSpeed - ground truth speed of the vehicle
+chapter - recording episodes
+ 
+Maximum Speed: 36.893229
+ 
+Number of episodes: 548
+ 
+Total Number of Entries: 1618852
+ 
+ 
+Validation Dataset... 
+ 
+First Five Rows: 
+                               cameraRight  ... chapter
+0  Zurich_6/go_pro_1/image/25/img00001.jpg  ...       0
+1  Zurich_6/go_pro_1/image/25/img00002.jpg  ...       0
+2  Zurich_6/go_pro_1/image/25/img00003.jpg  ...       0
+3  Zurich_6/go_pro_1/image/25/img00004.jpg  ...       0
+4  Zurich_6/go_pro_1/image/25/img00005.jpg  ...       0
+
+[5 rows x 34 columns]
+ 
+All Columns: 
+Index(['cameraRight', 'cameraFront', 'cameraRear', 'cameraLeft', 'here',
+       'tomtom', 'gpsLatitude', 'gpsLongitude', 'gpsAltitude', 'gpsPrecision',
+       'hereMmLatitude', 'hereMmLongitude', 'hereSpeedLimit',
+       'hereSpeedLimit_2', 'hereFreeFlowSpeed', 'hereSignal', 'hereYield',
+       'herePedestrian', 'hereIntersection', 'hereMmIntersection',
+       'hereSegmentExitHeading', 'hereSegmentEntryHeading',
+       'hereSegmentOthersHeading', 'hereCurvature', 'hereCurrentHeading',
+       'here1mHeading', 'here5mHeading', 'here10mHeading', 'here20mHeading',
+       'here50mHeading', 'hereTurnNumber', 'canSteering', 'canSpeed',
+       'chapter'],
+      dtype='object')
+ 
+Interested Columns: 
+                               cameraFront  canSpeed  chapter
+0  Zurich_6/go_pro_4/image/25/img00001.jpg       0.0        0
+1  Zurich_6/go_pro_4/image/25/img00002.jpg       0.0        0
+2  Zurich_6/go_pro_4/image/25/img00003.jpg       0.0        0
+3  Zurich_6/go_pro_4/image/25/img00004.jpg       0.0        0
+4  Zurich_6/go_pro_4/image/25/img00005.jpg       0.0        0
+ 
+cameraFront - paths to the images recorded by the front camera
+canSpeed - ground truth speed of the vehicle
+chapter - recording episodes
+ 
+Maximum Speed: 35.357548
+ 
+Number of episodes: 36
+ 
+Total Number of Entries: 106507

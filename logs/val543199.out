@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/utils.py", line 57, in <module>
+    batch(val_path, val_out)
+  File "/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/utils.py", line 51, in batch
+    shutil.copyfile(src, dst)
+  File "/itet-stor/zahmad/net_scratch/conda_envs/openmmlab/lib/python3.7/shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+OSError: [Errno 121] Remote I/O error: '/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/data/validation/dataset/rgb/video_3251/img_00003.jpg'
