@@ -128,7 +128,7 @@ early_stopping = EarlyStopping(patience=10, score_function=score_function, train
 val_evaluator.add_event_handler(Events.EPOCH_COMPLETED, early_stopping)
 
 # Train
-max_epochs = 2
+max_epochs = 5
 
 trainer.run(loaders["train"], max_epochs=max_epochs)
 
