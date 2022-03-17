@@ -1,1 +1,5 @@
 /data
+/logs/util.sh
+/models/best_models
+/models/checkpoints
+/models/pretrained

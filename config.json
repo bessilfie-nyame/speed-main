@@ -1,0 +1,5 @@
+{
+    "model_path": "models/pretrained",
+    "checkpoint_path": "models/checkpoints",
+    "best_models_path": "models/best_models"
+}

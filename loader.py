@@ -7,12 +7,18 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import ImageGrid
 import os
 import pandas as pd
+import json
 
 import warnings
 warnings.filterwarnings("ignore")
 
+train_videos_root = os.path.join(os.getcwd(), 'data/train/dataset')
+train_annotation_file = os.path.join(train_videos_root, 'annotations.txt')
 
-videos_root = os.path.join(os.getcwd(), 'dataset')
+validation_videos_root = os.path.join(os.getcwd(), 'data/validation/dataset')
+validation_annotation_file = os.path.join(validation_videos_root, 'annotations.txt')
+
+videos_root = os.path.join(os.getcwd(), 'data')
 annotation_file = os.path.join(videos_root, 'annotations.txt')
 
 preprocess = transforms.Compose([
@@ -32,9 +38,9 @@ test_preprocess = transforms.Compose([
 
 # Train
 train_dataset = VideoFrameDataset( 
-    root_path=videos_root,
-    annotationfile_path=annotation_file,
-    num_segments=10,
+    root_path=train_videos_root,
+    annotationfile_path=train_annotation_file,
+    num_segments=5,
     frames_per_segment=1,
     imagefile_template='img_{:05d}.jpg',
     transform=preprocess,
@@ -43,7 +49,7 @@ train_dataset = VideoFrameDataset(
 
 train_dataloader = torch.utils.data.DataLoader(
     dataset=train_dataset,
-    batch_size=2,
+    batch_size=64,
     shuffle=True,
     num_workers=4,
     pin_memory=True
@@ -51,9 +57,9 @@ train_dataloader = torch.utils.data.DataLoader(
 
 # Val
 val_dataset = VideoFrameDataset( 
-    root_path=videos_root,
-    annotationfile_path=annotation_file,
-    num_segments=10,
+    root_path=validation_videos_root,
+    annotationfile_path=validation_annotation_file,
+    num_segments=5,
     frames_per_segment=1,
     imagefile_template='img_{:05d}.jpg',
     transform=test_preprocess,
@@ -62,33 +68,32 @@ val_dataset = VideoFrameDataset(
 
 val_dataloader = torch.utils.data.DataLoader(
     dataset=val_dataset,
-    batch_size=2,
+    batch_size=64,
     shuffle=True,
     num_workers=4,
     pin_memory=True
 )   
 
 # Test
-test_dataset = VideoFrameDataset( 
-    root_path=videos_root,
-    annotationfile_path=annotation_file,
-    num_segments=10,
-    frames_per_segment=1,
-    imagefile_template='img_{:05d}.jpg',
-    transform=test_preprocess,
-    test_mode=True
-)
+# test_dataset = VideoFrameDataset( 
+#     root_path=videos_root,
+#     annotationfile_path=annotation_file,
+#     num_segments=10,
+#     frames_per_segment=1,
+#     imagefile_template='img_{:05d}.jpg',
+#     transform=test_preprocess,
+#     test_mode=True
+# )
 
-test_dataloader = torch.utils.data.DataLoader(
-    dataset=test_dataset,
-    batch_size=1,
-    shuffle=True,
-    num_workers=4,
-    pin_memory=True
-)   
+# test_dataloader = torch.utils.data.DataLoader(
+#     dataset=test_dataset,
+#     batch_size=1,
+#     shuffle=True,
+#     num_workers=4,
+#     pin_memory=True
+# )   
 
 loaders = {
     "train": train_dataloader,
-    "val": val_dataloader,
-    "test": test_dataloader
+    "val": val_dataloader
 }

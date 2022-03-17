@@ -9,9 +9,9 @@ import torch
 import torch.utils.model_zoo as model_zoo
 from torch import nn
 
-# sys.path.append('.')
-# from config import opt as args
-from non_local import NONLocalBlock3D
+from models.non_local import NONLocalBlock3D
+import json
+import os
 
 model_urls = {
     'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
@@ -21,6 +21,10 @@ model_urls = {
     'resnet152': 'https://download.pytorch.org/models/resnet152-b121ed2d.pth',
 }
 
+with open(os.path.join(os.getcwd(), 'config.json'), "r") as config_file:
+    config = json.load(config_file)
+
+model_path = os.path.join(os.getcwd(), config['model_path'])
 
 def weights_init_kaiming(m):
     classname = m.__class__.__name__
@@ -116,7 +120,6 @@ class I3DResNet(nn.Module):
         self.bn_2 = nn.BatchNorm3d(64, momentum=0.01)
         self.maxpool = nn.MaxPool3d(kernel_size=[1, 3, 3], stride=[1, 2, 2], padding=0)
 
-        print("First Residual Block")
         self.layer1 = self._make_layer(block, 64, layers[0],
                                        non_local=non_local_set[0],
                                        use_3d_conv=use_3d_conv_set[0])
@@ -124,17 +127,14 @@ class I3DResNet(nn.Module):
         #  non-local add pooling after res2
         self.maxpool2 = nn.MaxPool3d(kernel_size=(2, 1, 1), stride=(2, 1, 1), padding=(0, 0, 0))
 
-        print("Second Residual Block")
         self.layer2 = self._make_layer(block, 128, layers[1], stride=2,
                                        non_local=non_local_set[1],
                                        use_3d_conv=use_3d_conv_set[1])
 
-        print("Third Residual Block")
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2,
                                        non_local=non_local_set[2],
                                        use_3d_conv=use_3d_conv_set[2])
 
-        print("Fourth Residual Block")
         self.layer4 = self._make_layer(block, 512, layers[3], stride=2,
                                        non_local=non_local_set[3],
                                        use_3d_conv=use_3d_conv_set[3])
@@ -230,7 +230,7 @@ def i3dinit(model, strct):
                 new_pre_dict[k] = v
         pre_dict = new_pre_dict
     else:
-        pre_dict = model_zoo.load_url(model_urls[strct], '/home/benjamin/Desktop/resources/proj/speed_pred/model_1/models')
+        pre_dict = model_zoo.load_url(model_urls[strct], model_path)
 
     own_state = model.state_dict()
     own_state.pop('conv_1a.weight')
@@ -250,8 +250,6 @@ def i3dinit(model, strct):
     own_state.pop('bn_1c.bias')
     own_state.pop('bn_1c.running_mean')
     own_state.pop('bn_1c.running_var')
-
-
 
     own_state.pop('conv_2.weight')
     own_state.pop('bn_2.weight')
