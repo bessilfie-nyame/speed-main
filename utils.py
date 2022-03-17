@@ -2,14 +2,21 @@ import pandas as pd
 import numpy as np
 import os
 import shutil
+import csv
 
 root_path = '/srv/beegfs02/scratch/aegis_guardian/data/Datasets_ML_Pipeline/Drive360Challenge/Drive360Images/'
+label_root = '/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/data'
 
 train_path = os.path.join(root_path, 'drive360challenge_train.csv')
 val_path = os.path.join(root_path, 'drive360challenge_validation.csv')
 
 train_out = '/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/data/train/dataset/rgb'
 val_out = '/srv/beegfs02/scratch/aegis_guardian/data/datasets/finetuning/training/bespeed/speed-main/data/validation/dataset/rgb'
+
+train_label = os.path.join(label_root, 'train_target.csv')
+val_label = os.path.join(label_root, 'val_target.csv')
+
+MAX_SPEED = 36.893229
 
 def genbatches(file):
     df = pd.read_csv(file)
@@ -53,23 +60,41 @@ def batch(infile, outfile):
 
             batch += 1
 
-def avg_speed(infile, outfile):
+def avg_speed(infile, normalize=False):
     
     for episode in genbatches(infile):
         speed_list = None
         new_list = []
         for i, (_, speed, _) in enumerate(episode[:10*(len(episode)//10)]):
-            new_list.append(speed)
+            current_speed = speed
+            if normalize:
+                current_speed /= MAX_SPEED
+            new_list.append(current_speed)
 
             if len(new_list) == 10:
                 speed_list = new_list
                 new_list = []
                 yield np.mean(speed_list)
+
+def write_avg_speed(inpath, file_name, normalize=True):
+    with open(file_name, mode='w') as csvfile:
+        fieldname = ['avgCanSpeed']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldname)
+
+        writer.writeheader()
+
+        for speed in avg_speed(inpath, normalize=normalize):
+            writer.writerow({'avgCanSpeed': speed})
                     
 
 if __name__ == '__main__':
     # batch(train_path, train_out)
-    batch(val_path, val_out)
+    # batch(val_path, val_out)
+
+    write_avg_speed(train_path, train_label, normalize=False)
+    write_avg_speed(val_path, val_label, normalize=False)
+
+    
   
        
 
